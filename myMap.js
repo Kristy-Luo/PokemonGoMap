@@ -23,11 +23,13 @@ map_items = [
 function generate_pokemon_layer(map_items) {
     var pushpins = []
     // Create a pushpin for each map_item (pokemon)
-    for map_item in map_items:
+    for (var i in map_items) {
+        var map_item = map_items[i];
         var location = new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]); 
         var pushpin = new Microsoft.Maps.Pushpin(location, { icon: 'https://www.bingmapsportal.com/Content/images/poi_custom.png' });
         pushpins.append(pushpin);
-    
+    }
+
     // Add all pushpins to a layer 
     var layer = new Microsoft.Maps.Layer();
     layer.add(pushpins);
