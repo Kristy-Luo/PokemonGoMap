@@ -9,7 +9,7 @@ function loadMapScenario() {
 
 // 1. Define pokemon data format. And create mock pokemon data to test our map API. 
 // To display a pokemon on map, we need coordinate (latitude, longitude), pokemon_id, expiration times. 
-map_item = [
+map_items = [
     {
         "pokemon_id": 32, 
         "expiration_timestamp_ms": 1492439998000, 
@@ -20,7 +20,7 @@ map_item = [
 
 
 // 2. Display pokemon image on map by adding a pokemon data layer to the map.
-function generate_pokemon_layer(map_item) {
+function generate_pokemon_layer(map_items) {
     // Create pokemon pushpin 
     // Generate an array of 10 random pushpins within current map bounds
     var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(10, map.getBounds());
