@@ -29,7 +29,6 @@ function generate_pokemon_layer(map_items) {
                                                  { icon: 'images/pushpin_images/pokemon/' + map_item['pokemon_id'] + '.png' });
         pushpins.push(pushpin);
     }
-
     // Add all pushpins to a layer 
     var layer = new Microsoft.Maps.Layer();
     layer.add(pushpins);
