@@ -21,10 +21,14 @@ map_items = [
 
 // 2. Display pokemon image on map by adding a pokemon data layer to the map.
 function generate_pokemon_layer(map_items) {
-    // Create pokemon pushpin 
-    // Generate an array of 10 random pushpins within current map bounds
-    var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(10, map.getBounds());
-    // Add pushpin to a layer 
+    var pushpins = []
+    // Create a pushpin for each map_item (pokemon)
+    for map_item in map_items:
+        var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), { icon: 'https://www.bingmapsportal.com/Content/images/poi_custom.png',
+    anchor: new Microsoft.Maps.Point(12, 39) });
+        pushpins.append(pushpin);
+    
+    // Add all pushpins to a layer 
     var layer = new Microsoft.Maps.Layer();
     layer.add(pushpins);
     
