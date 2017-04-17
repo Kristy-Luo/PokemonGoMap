@@ -18,6 +18,28 @@ map_item = [
 ]
 
 
-// 2. Create and display pokemon image to map. 
+// 2. Display pokemon image on map by adding a pokemon data layer to the map.
+def add_pokemon_layer_to_map() {
+    var pokemon_layer = generate_pokemon_layer(map_items);
+    map.layers.insert(pokemon_layer);
+}
+
+def generate_pokemon_layer(map_item) {
+    // Create pokemon pushpin 
+    // Generate an array of 10 random pushpins within current map bounds
+    var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(10, map.getBounds());
+    // Add pushpin to a layer 
+    var layer = new Microsoft.Maps.Layer();
+    layer.add(pushpins);
+    
+    return layer; 
+}
+
+
+
+
+
+
+
 // 3. Create pokemon countdown clock refresh. 
 // 4. Connect with REST API to fetch pokemon data (dynamic data) from AWS Query Cluster. 
