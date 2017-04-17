@@ -20,7 +20,7 @@ map_item = [
 
 
 // 2. Display pokemon image on map by adding a pokemon data layer to the map.
-def generate_pokemon_layer(map_item) {
+function generate_pokemon_layer(map_item) {
     // Create pokemon pushpin 
     // Generate an array of 10 random pushpins within current map bounds
     var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(10, map.getBounds());
@@ -31,7 +31,7 @@ def generate_pokemon_layer(map_item) {
     return layer; 
 }
 
-def add_pokemon_layer_to_map() {
+function add_pokemon_layer_to_map() {
     var pokemon_layer = generate_pokemon_layer(map_items);
     map.layers.insert(pokemon_layer);
 }
