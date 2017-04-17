@@ -26,7 +26,7 @@ function generate_pokemon_layer(map_items) {
     for (var i in map_items) {
         var map_item = map_items[i];
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
-                                                 { icon: 'https://www.bingmapsportal.com/Content/images/poi_custom.png' });
+                                                 { icon: 'images/pushpin_images/pokemon/' + map_item['pokemon_id'] + '.png' });
         pushpins.push(pushpin);
     }
 
