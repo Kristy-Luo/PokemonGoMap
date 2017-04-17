@@ -4,7 +4,7 @@ function loadMapScenario() {
     map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         credentials: 'AorhxR-W15VbulU0aX5b-KPHXEEnhPtvtzHMrGNTwkYdhUeQ2Fzky8dzELJrPezY'
     });
-    add_pokemon_layer_to_map(); 
+    //add_pokemon_layer_to_map();
 }
 
 // 1. Define pokemon data format. And create mock pokemon data to test our map API. 
