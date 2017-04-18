@@ -9,6 +9,7 @@ function loadMapScenario() {
 
 // 1. Define pokemon data format. And create mock pokemon data to test our map API. 
 // To display a pokemon on map, we need coordinate (latitude, longitude), pokemon_id, expiration times. 
+/*
 map_items = [
     {
         "pokemon_id": 32, 
@@ -17,6 +18,7 @@ map_items = [
         "latitude": 41.72332198248414
     }
 ]
+*/
 
 // Given the expiration time (epoch time in ms), return the amount
 // of time (minutes:seconds) left before the pokemon disappears. 
