@@ -91,10 +91,11 @@ function fetch_pokemon_data() {
     };
     
     // Call the API methods in API Gateway. Each call returns a promise with a success and failure callbacks.
-    apigClient.mapPokemonsGET(params, body, additionalParams)
+    apigClient.mapPokemonsGet(params, body, additionalParams)
     .then(function(result){
         //This is where you would put a success callback
         console.log(result);
+        //var map_items = result.data; 
     }).catch( function(result){
         //This is where you would put an error callback
         console.log(result);
