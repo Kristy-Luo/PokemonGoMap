@@ -94,8 +94,8 @@ function fetch_pokemon_data() {
     apigClient.mapPokemonsGet(params, body, additionalParams)
     .then(function(result){
         //This is where you would put a success callback
-        console.log(result);
-        //var map_items = result.data; 
+        //console.log(result);
+        var map_items = result.data; 
     }).catch( function(result){
         //This is where you would put an error callback
         console.log(result);
