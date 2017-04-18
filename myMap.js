@@ -18,8 +18,8 @@ map_items = [
     }
 ]
 
-// Given the expiration time (epoch time, unit: seconds), return 
-// the time (minutes:seconds) left before the pokemon disappears. 
+// Given the expiration time (epoch time, unit: seconds), return the amount
+// of time (minutes:seconds) left before the pokemon disappears. 
 function get_countdown_timer(expire_time) {
     var now_time = new Date().getTime() / 1000; // unit: seconds 
     var time_left = expire_time - now_time; 
