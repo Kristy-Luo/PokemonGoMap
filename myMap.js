@@ -65,7 +65,7 @@ function refresh_pokemon_layer() {
     map.layers.insert(pokemon_layer);
 }
 // Call the refresh_pokemon_layer() function every second. 
-window.setInterval(refresh_pokemon_layer(), 1000);
+window.setInterval(function(){ refresh_pokemon_layer() }, 1000);
 
 
 
