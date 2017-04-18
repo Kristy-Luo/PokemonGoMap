@@ -54,7 +54,6 @@ function add_pokemon_layer_to_map() {
 }
 
 
-
 // 3. Refresh pokemon information on the map every second by replacing 
 // the old layer with new layer once the new layer is ready. 
 function refresh_pokemon_layer() {
@@ -65,9 +64,6 @@ function refresh_pokemon_layer() {
     // Add new layer 
     map.layers.insert(pokemon_layer);
 }
-// Call the refresh_pokemon_layer() function every second. 
-window.setInterval(function(){ refresh_pokemon_layer() }, 1000);
-
 
 
 // 4. Connect with REST API to fetch pokemon data (dynamic data) from AWS Query Cluster. 
@@ -104,3 +100,8 @@ function fetch_pokemon_data() {
         console.log(result);
     });
 }
+
+// Call the fetch_pokemon_data() every second. 
+window.setInterval(function(){ fetch_pokemon_data() }, 1000);
+// Call the refresh_pokemon_layer() function every second. 
+window.setInterval(function(){ refresh_pokemon_layer() }, 1000);
