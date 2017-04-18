@@ -12,12 +12,23 @@ function loadMapScenario() {
 map_items = [
     {
         "pokemon_id": 32, 
-        "expiration_timestamp_ms": 1492439998000, 
+        "expiration_timestamp": 1492439998000, 
         "longitude": -73.99953096315751, 
         "latitude": 41.72332198248414
     }
 ]
 
+// Given the expiration time (epoch time, unit: seconds), return 
+// the time (minutes:seconds) left before the pokemon disappears. 
+function get_countdown_timer(expire_time) {
+    var now_time = new Date().getTime() / 1000; // unit: seconds 
+    var time_left = expire_time - now_time; 
+    // convert seconds into minutes and seconds
+    var minutes = Math.floor(time_left / 60);
+    var seconds = Math.floor(time_left % 60);
+    
+    return minutes + ":" + seconds; 
+}
 
 // 2. Display pokemon image on map by adding a pokemon data layer to the map.
 function generate_pokemon_layer(map_items) {
@@ -26,7 +37,8 @@ function generate_pokemon_layer(map_items) {
     for (var i in map_items) {
         var map_item = map_items[i];
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
-                                                 { icon: 'images/pushpin_images/pokemon/' + map_item['pokemon_id'] + '.png' });
+                                                 { icon: 'images/pushpin_images/pokemon/' + map_item['pokemon_id'] + '.png',
+                                                   title: get_countdown_timer(map_item["expiration_timestamp"]) });
         pushpins.push(pushpin);
     }
     // Add all pushpins to a layer 
