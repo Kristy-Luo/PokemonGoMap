@@ -19,6 +19,7 @@ map_items = [
     }
 ]
 */
+var map_items = []; 
 
 // Given the expiration time (epoch time in ms), return the amount
 // of time (minutes:seconds) left before the pokemon disappears. 
@@ -97,7 +98,7 @@ function fetch_pokemon_data() {
     .then(function(result){
         //This is where you would put a success callback
         //console.log(result);
-        var map_items = result.data; 
+        map_items = result.data; 
     }).catch( function(result){
         //This is where you would put an error callback
         console.log(result);
